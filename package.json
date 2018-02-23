@@ -4,7 +4,7 @@
   "description": "enterprise licence validator",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "mocha test"
   },
   "repository": {
     "type": "git",
