@@ -59,3 +59,6 @@ function codeMean(code) {
         bizCode: code.substr(2, 15) 
     }
 }
+function validCode(code){
+    return true
+}
