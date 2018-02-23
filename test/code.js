@@ -10,5 +10,9 @@ describe('validate', function(){
         let code = '91440101321036511E'
         validate(code).type.should.be.equal('企业')
     })
+    // it('should valid false', function(){
+    //     let code = '9144010132103651E'
+    //     validate(code).valid.should.be.equal(false)
+    // })
 })
 

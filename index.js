@@ -4,7 +4,7 @@ module.exports = function(code) {
     let pattern = /^([0-9ABCDEFGHJKLMNPQRTUWXY]{2})([0-9]{6})([0-9ABCDEFGHJKLMNPQRTUWXY]{9})([0-9Y])$/
     if(RegExp(pattern).test(code))
         return {valid: false}
-    else if(code.length == 15)
+    else {if(code.length == 15)
         return {valid: true, type:enterType15(code) }
     else if(code.length == 18)
         return {valid: true, type:enterType18(code) }
