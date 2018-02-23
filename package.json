@@ -1,0 +1,28 @@
+{
+  "name": "enterprise-licence",
+  "version": "0.0.1",
+  "description": "enterprise licence validator",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/no7dw/enterprise-licence.git"
+  },
+  "keywords": [
+    "enterprise",
+    "licence",
+    "validator"
+  ],
+  "author": "no7dw",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/no7dw/enterprise-licence/issues"
+  },
+  "homepage": "https://github.com/no7dw/enterprise-licence#readme",
+  "devDependencies": {
+    "mocha": "^5.0.1",
+    "should": "^13.2.1"
+  }
+}
