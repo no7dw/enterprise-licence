@@ -1,14 +1,15 @@
 'use strict'
-
+const areaService = require('./lib/area_service')
 module.exports = function(code) {
-    let pattern = /^([0-9ABCDEFGHJKLMNPQRTUWXY]{2})([0-9]{6})([0-9ABCDEFGHJKLMNPQRTUWXY]{9})([0-9Y])$/
-    if(RegExp(pattern).test(code))
+    let pattern = /^([0-9ABCDEFGHJKLMNPQRTUWXY]{2})([0-9]{6})([0-9ABCDEFGHJKLMNPQRTUWXY]{9})([0-9ABCDEFGHJKLMNPQRTUWXY]{1})$/
+    if(!RegExp(pattern).test(code))
         return {valid: false}
-    else {if(code.length == 15)
+    else if(code.length == 15)
         return {valid: true, type:enterType15(code) }
     else if(code.length == 18)
-        return {valid: true, type:enterType18(code) }
+        return {valid: true, type:enterType18(code), area: areaFun(code) }
 }
+
 function enterType15 (code) {
     let d7 = code.substr(6, 1)
     let mapT = {
@@ -53,12 +54,16 @@ function enterType18 (code) {
         return '其他'
     }
 }  
-function codeMean(code) {
-    return {
-        orgzCode: code.substr(8, 9),
-        bizCode: code.substr(2, 15) 
-    }
+function areaFun(code) {
+    const areaObj = areaService(code.substr(2,6))
+    return areaObj.province.text + ' ' + areaObj.city.text + ' ' + areaObj.area.text 
 }
-function validCode(code){
-    return true
-}
+// function codeMean(code) {
+//     return {
+//         orgzCode: code.substr(8, 9),
+//         bizCode: code.substr(2, 15) 
+//     }
+// }
+// function validLastCode(code){
+//     return true
+// }
